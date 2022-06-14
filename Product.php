@@ -10,5 +10,11 @@ class Product {
     $this->description = $_description;
     $this->price = $_price;
   }
+
+  public function getSomeInfo() 
+  {
+    return "Nome prodotto: $this->name <br>
+    Descrizione prodotto: $this->description <br>
+    Prezzo prodotto: $this->price €";
+  }
 }
-?>
