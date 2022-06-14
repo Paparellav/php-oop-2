@@ -37,11 +37,15 @@ class User
     }
   }
 
-  // Funzione che verifica se la CDC sia valida o meno
+  // Funzione che verifica se la CDC sia valida o meno e stampa il risultato
   public function checkCDC() 
   {
     if ($this->validCdc) {
-      return "Ordine completato con successo. Verifica ordine <a href='#'>qui</a>";
+      return 
+      "
+      Ordine completato con successo. <br>
+      Verifica ordine <a href='#'>qui</a>
+      ";
     } else {
       return "Poraccio fatte na VISA e getta sta tesserina demm**rda.";
     }

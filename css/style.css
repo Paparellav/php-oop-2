@@ -5,14 +5,13 @@
 }
 
 html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
   width: 70%;
   margin: 4rem auto;
   display: flex;
-
 }
 
 h2 {
@@ -49,4 +48,14 @@ section {
 .section_3 h3 {
   font-weight: 400;
   color: darkslategrey;
+}
+
+a {
+  text-decoration: none;
+  color: #246bce;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #246bce;
 }
