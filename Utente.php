@@ -17,36 +17,33 @@ class User
     $this->userRegist = $_userRegist;
   }
 
+  // Funzione che aggiunge un prodotto al carrello
   public function addToCart($_product)
   {
-    if ($this->validCdc === true) {
-      $this->cart[] = $_product;
-      return true;
-    } else {
-      return false;
-    }
+    $this->cart[] = $_product;
   }
 
-  public function setDiscount()
-  {
-    if ($this->userRegist === true) {
-      return 20;
-    } else {
-      return 0;
-    }
-  }
-
+  // Funzione che calcola il prezzo totale (in base al numero di items nel carrello e in base alla registrazione utente)
   public function getTotalPrice()
   {
     $total_price = 0;
-    if ($this->validCdc === true) {
-
+    if ($this->userRegist === true) {
       foreach ($this->cart as $item) {
         $total_price += $item->price;
       }
-      return $total_price - $this->setDiscount();
+      return $total_price - ($total_price * 0.2);
     } else {
       return $total_price;
+    }
+  }
+
+  // Funzione che verifica se la CDC sia valida o meno
+  public function checkCDC() 
+  {
+    if ($this->cdc === true) {
+      return "Ordine completato con successo. Verifica ordine <a href='#'>qui</a>";
+    } else {
+      return "Poraccio fatte na VISA e getta sta tesserina demm**rda.";
     }
   }
 }

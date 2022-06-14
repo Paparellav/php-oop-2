@@ -14,6 +14,7 @@ $pet_accessory2 = new Accessory("Targhetta", "Targhetta con incisione nome cane"
 $Vitantonio = new User("Vitantonio", "vitopap@gmail.com", 121545459865, false, true);
 $Vitantonio->addToCart($pet_accessory);
 $Vitantonio->addToCart($pet_food);
+$Vitantonio->addToCart($pet_food);
 
 ?>
 
@@ -24,40 +25,52 @@ $Vitantonio->addToCart($pet_food);
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>E-commerce fasullo</title>
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <h2>Prodotti disponibili</h2>
-  <small>
-    <?php echo $pet_food->getSomeInfo(); ?>
-  </small>
-  <br>
-  <br>
-  <small>
-    <?php echo $pet_toy->getSomeInfo(); ?>
-  </small>
-  <br>
-  <br>
-  <small>
-    <?php echo $pet_accessory->getSomeInfo(); ?>
-  </small>
-  <br>
-  <br>
-  <small>
-    <?php echo $pet_accessory2->getSomeInfo(); ?>
-  </small>
+  <main>
+    <div class="container">
+      <section class="section_1">
+        <h2>Prodotti disponibili:</h2>
+        <small>
+          <?php echo $pet_food->getSomeInfo(); ?>
+        </small>
+        <small>
+          <?php echo $pet_toy->getSomeInfo(); ?>
+        </small>
+        <small>
+          <?php echo $pet_accessory->getSomeInfo(); ?>
+        </small>
+        <small>
+          <?php echo $pet_accessory2->getSomeInfo(); ?>
+        </small>
+      </section>
 
-  <h2>Ciao <?php echo $Vitantonio->name; ?>. Ecco il tuo carrello:</h2>
-  <ul>
-    <?php foreach ($Vitantonio->cart as $item) { ?>
-      <li>
-        <?php echo $item->getSomeInfo(); ?>
-      </li>
-      <br>
-    <?php } ?>
-  </ul>
-  <h3>Totale: € <?php echo $Vitantonio->getTotalPrice(); ?></h3>
+      <section class="section_2">
+        <h2>Ciao <?php echo $Vitantonio->name; ?>. Ecco il tuo carrello:</h2>
+        <ul>
+          <?php foreach ($Vitantonio->cart as $item) { ?>
+            <li>
+              <small>
+                <?php echo $item->getSomeInfo(); ?>
+              </small>
+            </li>
+            <br>
+          <?php } ?>
+        </ul>
+      </section>
+      
+    </div>
+    <section class="section_3">
+      <h2>Totale: € <?php echo $Vitantonio->getTotalPrice(); ?></h2>
+      <h3>
+        <?php echo $Vitantonio->checkCDC(); ?>
+      </h3>
+    </section>
+  </main>
 </body>
 
 </html>
