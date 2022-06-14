@@ -11,7 +11,7 @@ $pet_accessory2 = new Accessory("Targhetta", "Targhetta con incisione nome cane"
 
 // Utente
 
-$Vitantonio = new User("Vitantonio", "vitopap@gmail.com", 121545459865, false, true);
+$Vitantonio = new User("Vitantonio", "vitopap@gmail.com", 121545459865, true, true);
 $Vitantonio->addToCart($pet_accessory);
 $Vitantonio->addToCart($pet_food);
 $Vitantonio->addToCart($pet_food);
